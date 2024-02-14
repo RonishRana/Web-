@@ -1,0 +1,57 @@
+/* assignment_one.css */
+
+/* Mobile (max-width: 768px): 1 × 9 (full width cards) */
+@media screen and (max-width: 768px) {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .card img {
+    width: 100%; /* Make the image width 100% of its container */
+    height: auto; /* Ensure the image aspect ratio is maintained */
+    border-bottom: 0.25rem solid #fc0; /* Maintain the bottom border */
+    border-radius: 0.25rem 0.25rem 0 0; /* Preserve border radius */
+  }
+}
+
+/* Tablet (min-width: 768px): 2 × 4 (50% width cards, last card is full width) */
+@media screen and (min-width: 768px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+
+  .card:nth-last-child(1) {
+    grid-column: 1 / -1;
+  }
+
+  .card img {
+    width: 100%; /* Make the image width 100% of its container */
+    height: 200px; /* Set a fixed height for all images on tablet view */
+    object-fit: cover; /* Ensure the image covers its entire container */
+    border-bottom: 0.25rem solid #fc0; /* Maintain the bottom border */
+    border-radius: 0.25rem 0.25rem 0 0; /* Preserve border radius */
+  }
+}
+
+/* Desktop (min-width: 1200px): 3 × 3 (33% width cards) */
+@media screen and (min-width: 1200px) {
+  .card-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card img {
+    width: 100%; /* Make the image width 100% of its container */
+    height: 300px; /* Set a fixed height for all images on desktop view */
+    object-fit: cover; /* Ensure the image covers its entire container */
+    border-bottom: 0.25rem solid #fc0; /* Maintain the bottom border */
+    border-radius: 0.25rem 0.25rem 0 0; /* Preserve border radius */
+  }
+}
