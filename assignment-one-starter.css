@@ -20,45 +20,48 @@
   }
 }
 
-/* Tablet (min-width: 768px): 2 × 4 (50% width cards, last card is full width) */
-@media screen and (min-width: 768px) and (max-height: 768px) {
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-  }
+/* Tablet (min-width: 768px) */
+@media screen and (min-width: 768px) {
+  /* For landscape orientation */
+  @media screen and (min-width: 768px) and (min-aspect-ratio: 16/9) {
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem;
+    }
 
-  .card img {
-    width: 100%; /* Make the image width 100% of its container */
-    height: auto; /* Ensure the image aspect ratio is maintained */
-    object-fit: cover; /* Ensure the image covers its entire container */
-    border-bottom: 0.25rem solid #fc0; /* Maintain the bottom border */
-    border-radius: 0.25rem; /* Preserve border radius */
-  }
+    .card img {
+      width: 100%; /* Make the image width 100% of its container */
+      height: auto; /* Ensure the image aspect ratio is maintained */
+      object-fit: cover; /* Ensure the image covers its entire container */
+      border-bottom: 0.25rem solid #fc0; /* Maintain the bottom border */
+      border-radius: 0.25rem; /* Preserve border radius */
+    }
 
-  .card:nth-last-child(1) {
-    grid-column: 1 / -1;
+    .card:nth-last-child(1) {
+      grid-column: 1 / -1;
+    }
   }
-}
+  
+  /* For portrait orientation */
+  @media screen and (min-width: 768px) and (max-aspect-ratio: 16/9) {
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+    }
 
-/* Tablet (min-width: 768px): 2 × 4 (50% width cards, last card is full width) */
-@media screen and (min-width: 768px) and (min-height: 768px) {
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
-  }
+    .card img {
+      width: 100%; /* Make the image width 100% of its container */
+      height: auto; /* Ensure the image aspect ratio is maintained */
+      object-fit: cover; /* Ensure the image covers its entire container */
+      border-bottom: 0.25rem solid #fc0; /* Maintain the bottom border */
+      border-radius: 0.25rem; /* Preserve border radius */
+    }
 
-  .card img {
-    width: 100%; /* Make the image width 100% of its container */
-    height: auto; /* Ensure the image aspect ratio is maintained */
-    object-fit: cover; /* Ensure the image covers its entire container */
-    border-bottom: 0.25rem solid #fc0; /* Maintain the bottom border */
-    border-radius: 0.25rem; /* Preserve border radius */
-  }
-
-  .card:nth-last-child(1) {
-    grid-column: 1 / -1;
+    .card:nth-last-child(1) {
+      grid-column: 1 / -1;
+    }
   }
 }
 
