@@ -81,7 +81,17 @@
     border-radius: 0.25rem; /* Preserve border radius */
   }
 
+  /* Adjust monkey image */
   .card:nth-last-child(1) {
-    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card:nth-last-child(1) img {
+    width: 80%; /* Adjust the width of the monkey image */
+    height: auto; /* Ensure the image aspect ratio is maintained */
+    border-bottom: 0.25rem solid #fc0; /* Maintain the bottom border */
+    border-radius: 0.25rem; /* Preserve border radius */
   }
 }
